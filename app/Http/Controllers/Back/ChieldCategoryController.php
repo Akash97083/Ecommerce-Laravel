@@ -84,6 +84,7 @@ class ChieldCategoryController extends Controller
      */
     public function edit(ChieldCategory $childcategory)
     {
+
         
         return view('back.childcategory.edit',compact('childcategory'));
     }

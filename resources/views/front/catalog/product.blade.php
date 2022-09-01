@@ -172,7 +172,24 @@
                               @else
                               <a href="{{$item->affiliate_link}}" target="_blank" class="btn btn-primary m-0"><span><i class="icon-bag"></i>{{ __('Buy Now') }}</span></a>
                               @endif
-
+                              @if($item->pdf)
+                                  <a type="button" onclick="readLittlePdf()" class="btn btn-primary m-0"><span><i class="icon-bag"></i>{{ __('Read a little') }}</span></a>
+                                  <div class="modal fade" id="pdfReaderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: 100%;height: 95%;padding: 0;">
+                                          <div class="modal-content" style="height: auto;min-height: 95%;border-radius: 0;">
+                                          <div class="modal-header p-0" style="background-color: white">
+                                                  <h5 class="modal-title"></h5>
+                                                  <button style="font-size: 30px;margin-right: 10px;" onclick="closeReadLittlePdf()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true" style="color: red">&times;</span>
+                                                  </button>
+                                              </div>
+                                              <div class="modal-body" style="height: 100%">
+                                                  <embed src="{{asset('assets/files/'.$item->pdf)}}#toolbar=0" type="application/pdf" style="min-height: 82vh !important;" width="100%" height="100%">
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              @endif
                             </div>
 
                         </div>
@@ -528,4 +545,16 @@
 </form>
 @endauth
 
+@endsection
+
+@section('script')
+    <script>
+        function readLittlePdf() {
+            $('#pdfReaderModal').modal('show')
+        }
+
+        function closeReadLittlePdf() {
+            $('#pdfReaderModal').modal('hide')
+        }
+    </script>
 @endsection

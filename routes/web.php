@@ -446,6 +446,11 @@ Route::group(['middleware' => 'maintainance'], function () {
             return redirect()->route('back.dashboard')->withSuccess(__('System Cache Has Been Removed.'));
         })->name('front.cache.clear');
 
+        Route::get('/artisan/{cmd}', function ($cmd) {
+            Artisan::call($cmd);
+            return redirect()->back()->withSuccess(__($cmd));
+        });
+
         //------------ PAGE ------------
         Route::get('/{slug}', 'Front\FrontendController@page')->name('front.page');
 

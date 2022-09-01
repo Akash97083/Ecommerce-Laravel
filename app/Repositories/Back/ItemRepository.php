@@ -86,6 +86,13 @@ class ItemRepository
             }
         }
 
+        if($request->hasFile('pdf')){
+            $file = $request->pdf;
+            $name = time().str_replace(' ', '', $file->getClientOriginalName());
+            $file->move('assets/files',$name);
+            $input['pdf'] = $name;
+        }
+
 
         $input['is_type'] = 'undefine';
 
@@ -183,6 +190,13 @@ class ItemRepository
                 $input['file'] = $name;
                 $input['link'] = null;
             }
+        }
+
+        if($request->hasFile('pdf')){
+            $file = $request->pdf;
+            $name = time().str_replace(' ', '', $file->getClientOriginalName());
+            $file->move('assets/files',$name);
+            $input['pdf'] = $name;
         }
 
         $item->update($input);

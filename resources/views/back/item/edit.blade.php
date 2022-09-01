@@ -71,6 +71,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group pb-0  mb-0">
+                        <label>{{ __('PDF File') }} </label>
+                    </div>
+
+                    <div class="form-group position-relative">
+                        <input name="pdf" type="file" accept="application/pdf">
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="card-body">
                     <div class="form-group pb-0  mb-0">
