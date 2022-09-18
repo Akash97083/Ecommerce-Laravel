@@ -155,7 +155,7 @@ class CatalogController extends Controller
 
         if(Session::has('view_catalog')){
             $checkType = Session::get('view_catalog');
-            $name_string_count = 55;
+            $name_string_count = 99999;
         }else{
             Session::put('view_catalog','grid');
             $checkType = Session::get('view_catalog');

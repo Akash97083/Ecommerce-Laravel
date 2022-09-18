@@ -45,8 +45,8 @@ class HomePageController extends Controller
             'title1' => 'required|max:200',
             'title2' => 'required|max:200',
             'subtitle1' => 'required|max:200',
-            'url1' => 'required|max:200',
-            'url2' => 'required|max:200',
+            //'url1' => 'required|max:200',
+            //'url2' => 'required|max:200',
 
         ]);
         $all_images_names = ['img1','img2'];

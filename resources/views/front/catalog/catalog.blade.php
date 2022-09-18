@@ -60,7 +60,7 @@
                             <div class="product-category">
                                 <a href="{{route('front.catalog').'?category='.$item->category->slug}}">{{$item->category->name}}</a>
                             </div>
-                            <h3 class="product-title"><a href="{{route('front.product',$item->slug)}}">
+                            <h3 class="product-title"><a href="{{route('front.product',$item->slug)}}" style="height: auto">
                                 {{ strlen(strip_tags($item->name)) > $name_string_count ? substr(strip_tags($item->name), 0, 38) : strip_tags($item->name) }}
                             </a></h3>
                             <div class="rating-stars">

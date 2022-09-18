@@ -63,7 +63,7 @@ class SliderController extends Controller
             'logo' => 'image',
             'photo' => 'required|image',
             'title' => 'required|max:100',
-            'link' => 'required|max:255',
+            //'link' => 'required|max:255',
             'details' => 'required|max:255',
         ]);
         $this->repository->store($request);
@@ -92,7 +92,7 @@ class SliderController extends Controller
     {
         $request->validate([
             'title' => 'required|max:100',
-            'link' => 'required|max:255',
+            //'link' => 'required|max:255',
             'logo' => 'image',
             'photo' => 'image',
             'details' => 'required|max:255',

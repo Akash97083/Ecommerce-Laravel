@@ -100,7 +100,8 @@
 
                         <div class="product-category"><a href="{{route('front.catalog').'?category='.$compaign_item->item->category->slug}}">{{$compaign_item->item->category->name}}</a></div>
                         <h3 class="product-title"><a href="{{route('front.product',$compaign_item->item->slug)}}">
-                            {{ strlen(strip_tags($compaign_item->item->name)) > 35 ? substr(strip_tags($compaign_item->item->name), 0, 35) : strip_tags($compaign_item->item->name) }}
+                            {{--{{ strlen(strip_tags($compaign_item->item->name)) > 35 ? substr(strip_tags($compaign_item->item->name), 0, 35) : strip_tags($compaign_item->item->name) }}--}}
+                                {{ $compaign_item->item->name }}
                         </a></h3>
                         <div class="rating-stars">
                             {!! renderStarRating($compaign_item->item->reviews->avg('rating')) !!}
